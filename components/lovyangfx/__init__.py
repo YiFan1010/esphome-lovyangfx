@@ -1,0 +1,1 @@
+# ESPHome LovyanGFX external component
