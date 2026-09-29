@@ -1,0 +1,57 @@
+esphome:
+  name: st7796-lgfx-test
+
+  libraries:
+    - https://github.com/lovyan03/LovyanGFX.git
+
+external_components:
+  - source:
+      type: git
+      url: https://github.com/YiFan1010/esphome-lovyangfx
+      ref: main
+    components:
+      - lovyangfx
+
+esp32:
+  board: esp32-s3-devkitc-1
+  framework:
+    type: arduino
+
+logger:
+
+display:
+  - platform: lovyangfx
+    id: lcd
+    update_interval: 1s
+    lambda: |-
+      it.fill(Color::BLACK);
+
+      it.filled_rectangle(
+        0, 0, 320, 80,
+        Color(255, 0, 0)
+      );
+
+      it.filled_rectangle(
+        0, 80, 320, 160,
+        Color(0, 255, 0)
+      );
+
+      it.filled_rectangle(
+        0, 160, 320, 240,
+        Color(0, 0, 255)
+      );
+
+      it.filled_rectangle(
+        0, 240, 320, 320,
+        Color(255, 255, 0)
+      );
+
+      it.filled_rectangle(
+        0, 320, 320, 400,
+        Color(255, 0, 255)
+      );
+
+      it.filled_rectangle(
+        0, 400, 320, 480,
+        Color(0, 255, 255)
+      );
