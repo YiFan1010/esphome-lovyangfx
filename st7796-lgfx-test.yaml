@@ -2,7 +2,7 @@ esphome:
   name: st7796-lgfx-test
 
   libraries:
-    - https://github.com/lovyan03/LovyanGFX.git
+    - LovyanGFX=https://github.com/lovyan03/LovyanGFX.git
 
 external_components:
   - source:
@@ -22,7 +22,40 @@ logger:
 display:
   - platform: lovyangfx
     id: lcd
+
+    width: 320
+    height: 480
+
+    frequency: 10MHz
+
+    pin_cs: 39
+    pin_dc: 38
+    pin_wr: 45
+
+    pin_d0: 13
+    pin_d1: 12
+    pin_d2: 11
+    pin_d3: 10
+    pin_d4: 9
+    pin_d5: 46
+    pin_d6: 3
+    pin_d7: 8
+
+    pin_d8: 18
+    pin_d9: 17
+    pin_d10: 16
+    pin_d11: 15
+    pin_d12: 7
+    pin_d13: 6
+    pin_d14: 5
+    pin_d15: 4
+
+    rotation: 0
+    invert: true
+    rgb_order: false
+
     update_interval: 1s
+
     lambda: |-
       it.fill(Color::BLACK);
 
